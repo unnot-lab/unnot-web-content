@@ -1,0 +1,902 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/help/schemas/unnot-agents-full.schema.json",
+  "title": "Unnot Agents Config (full file, reference)",
+  "$ref": "#/$defs/UnnotAgentsFull",
+  "$defs": {
+    "UnnotAgentsFull": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "agents": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "subtitle": {
+                "type": "string",
+                "description": "Optional second line under the agent name"
+              },
+              "description": {
+                "type": "string"
+              },
+              "notes": {
+                "type": "string"
+              },
+              "prompt": {
+                "type": "string"
+              },
+              "selectedTools": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "toolId": {
+                      "type": "string"
+                    },
+                    "toolName": {
+                      "type": "string"
+                    },
+                    "selectedServerTools": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "selectAll": {
+                      "type": "boolean"
+                    },
+                    "enabled": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "toolId",
+                    "selectedServerTools"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "selectedAgents": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "agentId": {
+                      "type": "string"
+                    },
+                    "agentName": {
+                      "type": "string"
+                    },
+                    "defaultParams": {
+                      "type": "object",
+                      "additionalProperties": {}
+                    },
+                    "enabled": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "agentId"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "object"
+                  },
+                  "properties": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "string",
+                            "number",
+                            "boolean",
+                            "array",
+                            "object"
+                          ]
+                        },
+                        "subtype": {
+                          "type": "string",
+                          "enum": [
+                            "url",
+                            "email",
+                            "file",
+                            "folder",
+                            "date",
+                            "time",
+                            "phone",
+                            "category_single",
+                            "category_multi"
+                          ]
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "default": {},
+                        "enabled": {
+                          "type": "boolean"
+                        },
+                        "isSystem": {
+                          "type": "boolean"
+                        },
+                        "enum": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "minimum": {
+                          "type": "number"
+                        },
+                        "maximum": {
+                          "type": "number"
+                        },
+                        "minLength": {
+                          "type": "number"
+                        },
+                        "maxLength": {
+                          "type": "number"
+                        },
+                        "pattern": {
+                          "type": "string"
+                        },
+                        "minItems": {
+                          "type": "number"
+                        },
+                        "maxItems": {
+                          "type": "number"
+                        },
+                        "uniqueItems": {
+                          "type": "boolean"
+                        },
+                        "properties": {
+                          "type": "object",
+                          "additionalProperties": {
+                            "$ref": "#/$defs/UnnotAgentsFull/properties/agents/additionalProperties/properties/inputSchema/properties/properties/additionalProperties"
+                          }
+                        },
+                        "required": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "items": {
+                          "$ref": "#/$defs/UnnotAgentsFull/properties/agents/additionalProperties/properties/inputSchema/properties/properties/additionalProperties"
+                        }
+                      },
+                      "required": [
+                        "type"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "type",
+                  "properties"
+                ],
+                "additionalProperties": false
+              },
+              "outputSchema": {
+                "$ref": "#/$defs/UnnotAgentsFull/properties/agents/additionalProperties/properties/inputSchema"
+              },
+              "triggers": {
+                "type": "array"
+              },
+              "llmAccount": {
+                "type": "object",
+                "properties": {
+                  "useDefaultModel": {
+                    "type": "boolean"
+                  },
+                  "accountId": {
+                    "type": "string"
+                  },
+                  "accountName": {
+                    "type": "string"
+                  },
+                  "modelId": {
+                    "type": "string"
+                  },
+                  "modelName": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "useDefaultModel"
+                ],
+                "additionalProperties": false
+              },
+              "llmSettings": {
+                "type": "object",
+                "properties": {
+                  "temperature": {
+                    "type": "number"
+                  },
+                  "maxTokens": {
+                    "type": "number"
+                  },
+                  "enableStreaming": {
+                    "type": "boolean"
+                  },
+                  "useSystemCache": {
+                    "type": "boolean"
+                  },
+                  "includeToolDescriptionsInPrompt": {
+                    "type": "boolean"
+                  },
+                  "systemPromptSuffix": {
+                    "type": "string"
+                  },
+                  "profile": {
+                    "type": "string",
+                    "enum": [
+                      "default",
+                      "creative",
+                      "performance",
+                      "balanced"
+                    ]
+                  },
+                  "originalProfile": {
+                    "type": "string",
+                    "enum": [
+                      "default",
+                      "creative",
+                      "performance",
+                      "balanced"
+                    ]
+                  },
+                  "structuredOutputMode": {
+                    "type": "string",
+                    "enum": [
+                      "always",
+                      "final_only",
+                      "tool_based"
+                    ]
+                  },
+                  "reasoning": {
+                    "type": "object",
+                    "properties": {
+                      "effort": {
+                        "type": "string",
+                        "enum": [
+                          "low",
+                          "medium",
+                          "high"
+                        ]
+                      },
+                      "maxTokens": {
+                        "type": "number"
+                      },
+                      "exclude": {
+                        "type": "boolean"
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "retryProfile": {
+                    "type": "string",
+                    "enum": [
+                      "default",
+                      "maximum",
+                      "standard",
+                      "minimal",
+                      "disabled"
+                    ]
+                  },
+                  "webSearch": {
+                    "type": "object",
+                    "properties": {
+                      "enabled": {
+                        "type": "boolean"
+                      },
+                      "searchIntensity": {
+                        "type": "string",
+                        "enum": [
+                          "low",
+                          "medium",
+                          "high"
+                        ]
+                      },
+                      "maxSources": {
+                        "type": "number",
+                        "minimum": 1,
+                        "maximum": 20
+                      },
+                      "showSources": {
+                        "type": "boolean"
+                      },
+                      "allowedDomains": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "enableTaskListTool": {
+                    "type": "boolean"
+                  },
+                  "includeTaskListInResult": {
+                    "type": "boolean"
+                  },
+                  "contextManagement": {
+                    "type": "object",
+                    "properties": {
+                      "summarizationThreshold": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "summarizationDetail": {
+                        "type": "string",
+                        "enum": [
+                          "concise",
+                          "medium",
+                          "detailed"
+                        ]
+                      },
+                      "enableContextMessagesLimit": {
+                        "type": "boolean"
+                      },
+                      "maxContextMessages": {
+                        "type": "number",
+                        "minimum": 1,
+                        "maximum": 500
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "additionalProperties": false
+              },
+              "expectedOutputFormat": {
+                "type": "string",
+                "enum": [
+                  "json",
+                  "markdown",
+                  "text",
+                  "html"
+                ]
+              },
+              "location": {
+                "type": "string"
+              },
+              "lastRunAt": {
+                "type": "string"
+              },
+              "agentSettings": {
+                "type": "object",
+                "properties": {
+                  "useGlobalSettings": {
+                    "type": "boolean"
+                  },
+                  "maxExecutionTime": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "llmResponseTimeout": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "maxIterations": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0
+                  },
+                  "maxConsecutiveSameToolCalls": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0
+                  },
+                  "maxConsecutiveToolFailures": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0
+                  }
+                },
+                "additionalProperties": false
+              },
+              "executionActions": {
+                "type": "object",
+                "properties": {
+                  "preExecution": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "const": "script"
+                      },
+                      "enabled": {
+                        "type": "boolean"
+                      },
+                      "delay": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "command": {
+                        "type": "string"
+                      },
+                      "args": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "workingDirectory": {
+                        "type": "string"
+                      },
+                      "timeout": {
+                        "type": "number",
+                        "exclusiveMinimum": 0
+                      },
+                      "waitForCompletion": {
+                        "type": "boolean"
+                      },
+                      "onError": {
+                        "type": "string",
+                        "enum": [
+                          "abort",
+                          "continue",
+                          "warn"
+                        ]
+                      },
+                      "env": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      },
+                      "runOnStatus": {
+                        "type": "string",
+                        "enum": [
+                          "always",
+                          "success",
+                          "error"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "enabled",
+                      "waitForCompletion"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "preExecutionEnabled": {
+                    "type": "boolean"
+                  },
+                  "postExecution": {
+                    "type": "array",
+                    "items": {
+                      "anyOf": [
+                        {
+                          "not": {}
+                        },
+                        {
+                          "anyOf": [
+                            {
+                              "$ref": "#/$defs/UnnotAgentsFull/properties/agents/additionalProperties/properties/executionActions/properties/preExecution"
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "const": "agent"
+                                },
+                                "enabled": {
+                                  "type": "boolean"
+                                },
+                                "delay": {
+                                  "type": "number",
+                                  "minimum": 0
+                                },
+                                "agentId": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "agentName": {
+                                  "type": "string"
+                                },
+                                "inputMapping": {
+                                  "type": "object",
+                                  "additionalProperties": {
+                                    "type": "string"
+                                  }
+                                },
+                                "runOnStatus": {
+                                  "$ref": "#/$defs/UnnotAgentsFull/properties/agents/additionalProperties/properties/executionActions/properties/preExecution/properties/runOnStatus"
+                                },
+                                "onError": {
+                                  "$ref": "#/$defs/UnnotAgentsFull/properties/agents/additionalProperties/properties/executionActions/properties/preExecution/properties/onError"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "enabled",
+                                "agentId"
+                              ],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "const": "tool"
+                                },
+                                "enabled": {
+                                  "type": "boolean"
+                                },
+                                "delay": {
+                                  "type": "number",
+                                  "minimum": 0
+                                },
+                                "serverId": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "serverName": {
+                                  "type": "string"
+                                },
+                                "toolName": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "toolDisplayName": {
+                                  "type": "string"
+                                },
+                                "arguments": {
+                                  "type": "object",
+                                  "additionalProperties": {
+                                    "type": "string"
+                                  }
+                                },
+                                "runOnStatus": {
+                                  "$ref": "#/$defs/UnnotAgentsFull/properties/agents/additionalProperties/properties/executionActions/properties/preExecution/properties/runOnStatus"
+                                },
+                                "onError": {
+                                  "$ref": "#/$defs/UnnotAgentsFull/properties/agents/additionalProperties/properties/executionActions/properties/preExecution/properties/onError"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "enabled",
+                                "serverId",
+                                "toolName",
+                                "arguments"
+                              ],
+                              "additionalProperties": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "postExecutionEnabled": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "resources": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "mimeType": {
+                      "type": "string"
+                    },
+                    "size": {
+                      "type": "number"
+                    },
+                    "annotations": {
+                      "type": "object",
+                      "properties": {
+                        "audience": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "enum": [
+                              "user",
+                              "assistant"
+                            ]
+                          }
+                        },
+                        "priority": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        },
+                        "lastModified": {
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "resourceId": {
+                      "type": "string"
+                    },
+                    "resourcePath": {
+                      "type": "string"
+                    },
+                    "resourceType": {
+                      "type": "string",
+                      "enum": [
+                        "file",
+                        "folder",
+                        "uri"
+                      ]
+                    },
+                    "storageType": {
+                      "type": "string",
+                      "enum": [
+                        "snapshot",
+                        "reference"
+                      ]
+                    },
+                    "hash": {
+                      "type": "string"
+                    },
+                    "sourcePath": {
+                      "type": "string"
+                    },
+                    "originalFileName": {
+                      "type": "string"
+                    },
+                    "originalFolderPath": {
+                      "type": "string"
+                    },
+                    "folderStructure": {
+                      "type": "object",
+                      "properties": {
+                        "files": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "relativePath": {
+                                "type": "string"
+                              },
+                              "hash": {
+                                "type": "string"
+                              },
+                              "resourceId": {
+                                "type": "string"
+                              },
+                              "size": {
+                                "type": "number"
+                              },
+                              "mimeType": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "relativePath",
+                              "hash",
+                              "resourceId",
+                              "size"
+                            ],
+                            "additionalProperties": false
+                          }
+                        }
+                      },
+                      "required": [
+                        "files"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "ignorePatterns": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "uri": {
+                      "type": "string"
+                    },
+                    "useAsTemplate": {
+                      "type": "boolean"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    },
+                    "enabled": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "resourceId",
+                    "resourcePath",
+                    "resourceType",
+                    "storageType",
+                    "createdAt",
+                    "updatedAt"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "name",
+              "prompt",
+              "location"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "global": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "lastModified": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "lastModified"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "global"
+          ],
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "createdAt": {
+                "type": "string"
+              },
+              "updatedAt": {
+                "type": "string"
+              },
+              "testParams": {
+                "type": "object",
+                "additionalProperties": {}
+              },
+              "showPromptAsSource": {
+                "type": "boolean"
+              },
+              "schedulerConfig": {
+                "type": "object",
+                "properties": {
+                  "isActive": {
+                    "type": "boolean"
+                  },
+                  "errorCount": {
+                    "type": "number"
+                  },
+                  "executionCount": {
+                    "type": "number"
+                  },
+                  "lastActivated": {
+                    "type": "string"
+                  },
+                  "lastExecuted": {
+                    "type": "string"
+                  },
+                  "nextExecution": {
+                    "type": "string"
+                  },
+                  "lastError": {
+                    "type": "string"
+                  },
+                  "lastCost": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "lastUsage": {
+                    "type": "object",
+                    "properties": {
+                      "inputTokens": {
+                        "type": "number"
+                      },
+                      "outputTokens": {
+                        "type": "number"
+                      },
+                      "totalTokens": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "inputTokens",
+                      "outputTokens",
+                      "totalTokens"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "totalCost": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "totalUsage": {
+                    "type": "object",
+                    "properties": {
+                      "inputTokens": {
+                        "type": "number"
+                      },
+                      "outputTokens": {
+                        "type": "number"
+                      },
+                      "totalTokens": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "inputTokens",
+                      "outputTokens",
+                      "totalTokens"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "lastDuration": {
+                    "type": "number"
+                  },
+                  "totalDuration": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "isActive",
+                  "errorCount",
+                  "executionCount"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "agents",
+        "metadata"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

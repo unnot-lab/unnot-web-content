@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/help/schemas/unnot-tools-full.schema.json",
+  "title": "Unnot Tools Config (full file, import-friendly)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["mcpServers"],
+  "properties": {
+    "format": { "type": "string", "description": "Optional file format marker." },
+    "version": { "type": "string", "description": "Optional schema/version marker." },
+    "mcpServers": {
+      "type": "object",
+      "description": "Transport-level MCP server configuration indexed by serverId.",
+      "additionalProperties": { "$ref": "#/$defs/McpServerConfig" }
+    },
+    "settings": {
+      "type": "object",
+      "description": "Optional app-level settings indexed by serverId. Omit when importing minimal configs.",
+      "additionalProperties": { "$ref": "#/$defs/ServerSettings" }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Per-server metadata (timestamps, stats) plus optional global block.",
+      "additionalProperties": false,
+      "properties": {
+        "global": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "description": { "type": "string" },
+            "lastModified": { "type": "string" }
+          }
+        }
+      },
+      "patternProperties": {
+        "^[A-Za-z0-9._-]+$": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "createdAt": { "type": "string" },
+            "updatedAt": { "type": "string" },
+            "connectionCount": { "type": "number" },
+            "lastConnected": { "type": "string" },
+            "lastError": { "type": "string" }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "ConfigInput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "id", "description"],
+      "properties": {
+        "type": { "enum": ["promptString", "string"] },
+        "id": { "type": "string" },
+        "description": { "type": "string" },
+        "password": { "type": "boolean" },
+        "default": { "type": "string" }
+      }
+    },
+    "ToolInputSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind"],
+      "properties": {
+        "id": { "type": "string" },
+        "kind": {
+          "enum": ["env", "arg", "placeholder", "http-header", "http-header-variable"]
+        },
+        "name": { "type": "string" },
+        "valueHint": { "type": "string" },
+        "description": { "type": "string" },
+        "required": { "type": "boolean" },
+        "default": { "type": "string" },
+        "isSecret": { "type": "boolean" },
+        "example": { "type": "string" },
+        "format": { "enum": ["string", "number", "boolean", "filepath"] },
+        "choices": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "origin": { "enum": ["catalog", "user"] },
+        "headerName": { "type": "string" },
+        "groupId": { "type": "string" }
+      }
+    },
+    "McpServerConfig": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "command"],
+          "properties": {
+            "type": { "const": "stdio" },
+            "command": { "type": "string" },
+            "args": { "type": "array", "items": { "type": "string" } },
+            "env": { "type": "object", "additionalProperties": { "type": "string" } }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "url"],
+          "properties": {
+            "type": { "enum": ["sse", "http-stream"] },
+            "url": { "type": "string" },
+            "headers": { "type": "object", "additionalProperties": { "type": "string" } }
+          }
+        }
+      ]
+    },
+    "OAuthConfig": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "authorizationUrl": { "type": "string" },
+        "tokenUrl": { "type": "string" },
+        "clientId": { "type": "string" },
+        "clientSecret": { "type": "string" },
+        "scope": {
+          "oneOf": [
+            { "type": "string" },
+            { "type": "array", "items": { "type": "string" } }
+          ]
+        },
+        "usePkce": { "type": "boolean" },
+        "providerName": { "type": "string" },
+        "providerId": { "type": "string" }
+      }
+    },
+    "CustomTimeouts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["useGlobalSettings"],
+      "properties": {
+        "useGlobalSettings": { "type": "boolean" },
+        "connectionTimeout": { "type": "number" },
+        "requestTimeout": { "type": "number" },
+        "maxOperationTimeout": { "type": "number" },
+        "resetTimeoutOnProgress": { "type": "boolean" }
+      }
+    },
+    "CustomSessionSettings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["useGlobalSettings"],
+      "properties": {
+        "useGlobalSettings": { "type": "boolean" },
+        "sessionManagement": { "type": "boolean" },
+        "resumability": { "type": "boolean" }
+      }
+    },
+    "McpCatalogRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["catalogId", "entryId"],
+      "properties": {
+        "catalogId": { "type": "string" },
+        "entryId": { "type": "string" }
+      }
+    },
+    "ServerSettings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "location"],
+      "properties": {
+        "name": { "type": "string" },
+        "subtitle": {
+          "type": "string",
+          "description": "Optional second line under the server name"
+        },
+        "description": { "type": "string" },
+        "location": { "type": "string" },
+        "notes": { "type": "string" },
+        "autoStart": { "type": "boolean" },
+        "useAllTools": { "type": "boolean" },
+        "enabled": { "type": "boolean" },
+        "approveAllTools": { "type": "boolean" },
+        "autoapprove": { "type": "array", "items": { "type": "string" } },
+        "autoblock": { "type": "array", "items": { "type": "string" } },
+        "customTimeouts": { "$ref": "#/$defs/CustomTimeouts" },
+        "customSessionSettings": { "$ref": "#/$defs/CustomSessionSettings" },
+        "authType": { "enum": ["bearer", "basic", "oauth2"] },
+        "oauthConfig": { "$ref": "#/$defs/OAuthConfig" },
+        "origin": { "enum": ["builtin", "gallery", "user"] },
+        "mcpCatalogRef": { "$ref": "#/$defs/McpCatalogRef" },
+        "homepageUrl": { "type": "string" },
+        "inputSpec": { "type": "array", "items": { "$ref": "#/$defs/ToolInputSpec" } }
+      }
+    }
+  }
+}
+
