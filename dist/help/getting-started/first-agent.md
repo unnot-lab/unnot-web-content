@@ -11,7 +11,7 @@ An agent is a workflow: a prompt (instructions for the LLM), optional MCP tools,
    In **Agents**, click the **Add** button (➕) in the toolbar. The agent editor opens with a new, unsaved agent. Give it a **name** and, if you like, a **category** (location). New agents use the **Default Agent Location** from Settings unless you choose another.
 
 3. **Set the prompt**  
-   In the editor, write the **Instructions** (prompt) that describe what the agent should do. You can add **input fields** and reference them in the prompt with placeholders: type **/** for autocomplete or double‑click a field in the **Input/Output** panel. See [Prompt and placeholders](/help/prompt-placeholders) for the full format.
+   In the editor, write the **Instructions** (prompt) that describe what the agent should do. You can add **input fields** and reference them in the prompt with placeholders: type **/** for autocomplete or double‑click a field in the **Input/Output** panel. For a local file or folder per run, add **File path** or **Folder path** in **Input/Output** (see [Local files and folders](/help/local-files)). See [Prompt and placeholders](/help/prompt-placeholders) for the full format.
 
 4. **Attach tools (optional)**  
    In the side panel, open **Tools** and add the MCP tools this agent is allowed to use. Without tools, the agent only calls the LLM.

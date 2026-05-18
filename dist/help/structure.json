@@ -7,6 +7,7 @@
     ]},
     {"id": "agents", "title": "Agents", "path": "/help/agents", "filePath": "agents.md"},
     {"id": "prompt-placeholders", "title": "Prompt and placeholders", "path": "/help/prompt-placeholders", "filePath": "prompt-placeholders.md"},
+    {"id": "local-files", "title": "Local files and folders", "path": "/help/local-files", "filePath": "local-files.md"},
     {"id": "tools", "title": "Tools", "path": "/help/tools", "filePath": "tools.md"},
     {"id": "gallery", "title": "Tool Gallery", "path": "/help/gallery", "filePath": "gallery.md"},
     {"id": "llm-accounts", "title": "LLM Accounts", "path": "/help/llm-accounts", "filePath": "llm-accounts.md"},

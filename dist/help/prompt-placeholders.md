@@ -15,7 +15,7 @@ Placeholders use the form **`{@type:id}`** or **`{@type:id:displayName}`**. Use 
 | **resource** | `{@resource:name}` | `{@resource:template.txt}` |
 | **comment** | `{@comment:any text}` | `{@comment:Optional step}` — removed from the final prompt, visible only in the editor |
 
-- **input / output** — use a dot for nested fields: `{@input:address.city}`. The **id** must match the field name (or path) from Input/Output in the side panel.
+- **input / output** — use a dot for nested fields: `{@input:address.city}`. The **id** must match the field name (or path) from Input/Output in the side panel. For **File path** and **Folder path** fields, the placeholder inserts the path string; the agent reads the file through that declared input field, not via `{@resource:…}`. See [Local files and folders](/help/local-files).
 - **tool** — **id** is `serverId.toolName` (one tool) or just `serverId` (all tools of that server). Optional **displayName** after the second colon (e.g. `Server 🠚 tool_name`).
 - **agent** — **id** is the subagent id (or empty for name lookup). Optional **displayName** after the second colon.
 - **comment** — any text; it is **not** sent to the model, only shown in the editor.
@@ -49,4 +49,4 @@ The Instructions field can be **Markdown** (headings, bold, lists, code) or **pl
 
 You can **switch manually** with the **MD** / **TXT** button on the toolbar above the Instructions field: **MD** = Markdown view, **TXT** = plain text / source view. Use TXT when you want to see or edit the exact placeholder syntax.
 
-For a first agent, see [Your First Agent](/help/getting-started/first-agent). For the full agent workflow, see [Agents](/help/agents).
+For a first agent, see [Your First Agent](/help/getting-started/first-agent). For the full agent workflow, see [Agents](/help/agents). For file paths, resources, and MCP file tools, see [Local files and folders](/help/local-files).

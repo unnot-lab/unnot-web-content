@@ -86,6 +86,8 @@ For programmatic generation and validation of the full native tools JSON format 
 
 When editing an agent, open the **Tools** section in the side panel. Attach the MCP tools that this agent is allowed to use. The LLM will be able to call only those tools during execution. Tools must be **Connected** for the agent to use them; if a tool is disconnected, the agent may fail or skip that tool.
 
+For paths declared as **File path** or **Folder path** on the agent, the agent can usually read them without an extra file MCP tool; attach MCP file tools when you need writes, undeclared paths, or specialized readers. See [Local files and folders](/help/local-files).
+
 **Tip:** Use **Testing** in the tool editor side panel (when the tool is connected) to call tools and see responses without running a full agent.
 
 For connection issues and common errors, see [Troubleshooting](/help/troubleshooting). For gallery-specific advice and safety checks, see [Tool Gallery](/help/gallery). For agent workflows, see [Agents](/help/agents). Global options for tool startup (e.g. start all tools on app launch) are in **Settings → General** (Tools Startup Mode).

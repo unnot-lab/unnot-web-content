@@ -51,6 +51,14 @@ If a tool uses **OAuth2 (browser login)** and cannot connect:
 - **Inputs** — fill any required input fields when you run. Placeholders in the prompt must match input field names.
 - **LLM account** — ensure an LLM account is configured (in **LLM Accounts**) and that the agent has an account and model selected in the editor (**LLM** section in the side panel).
 
+## Agent cannot read a local file
+
+- **Field type** — the path must come from a **File path** or **Folder path** input field (or from a **File system** trigger’s **Input File** object with those subtypes), not from plain text in the prompt alone.
+- **Run inputs** — when you **Run** manually or via API, pass the path in **inputParameters** with the correct field name. Empty or wrong keys are rejected—the path must match a declared **File path** or **Folder path** field.
+- **Resource vs input** — files referenced as `{@resource:…}` use **Resources**; run-time paths use **File path** / **Folder path** input fields. Do not mix them. See [Local files and folders](/help/local-files).
+- **Attached tools** — if the workflow uses another MCP tool to read the file, ensure that tool is **Connected** and the path parameter matches what that tool expects (check execution logs or tool docs for a full path such as **absolute_path**).
+- **File system trigger** — automatic runs require the agent to be **Activated**; check **Results** logs for the path actually passed in **Input File**.
+
 ## CLI or API: "Connection refused" or cannot connect
 
 The **CLI** and **REST API** talk to the Unnot app over HTTP. If you get connection refused or timeouts:
