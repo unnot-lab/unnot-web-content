@@ -22,6 +22,7 @@ You might start with something familiar: work that repeats on a schedule, a fold
 
 - [Getting Started](/help/getting-started) — first agent and basic setup.
 - [Agents](/help/agents) — triggers, status, and how runs work.
+- [Batch run](/help/batch-run) — process many files, CSV rows, or list values with progress and export.
 - [Local files and folders](/help/local-files) — file and folder paths per run, agent resources, and MCP file tools.
 - [Tools](/help/tools) — transports, connection, troubleshooting.
 - [Tool Gallery](/help/gallery) — discover and install tools safely.

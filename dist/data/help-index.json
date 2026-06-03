@@ -1,12 +1,13 @@
 {
-  "generatedAt": "2026-05-18T23:09:03.339Z",
-  "totalPages": 18,
+  "generatedAt": "2026-06-03T21:24:28.789Z",
+  "totalPages": 19,
   "navSlugs": [
     "overview",
     "getting-started",
     "getting-started/first-agent",
     "getting-started/configuration",
     "agents",
+    "batch-run",
     "prompt-placeholders",
     "local-files",
     "tools",
@@ -26,7 +27,7 @@
       "slug": "overview",
       "path": "overview.md",
       "title": "What is Unnot",
-      "hash": "9b973c54ad106d38e1e83105d27c5e4f9b28ffa31c34ab41462267308e5b4cc2",
+      "hash": "b6e44806af721e8b6eabbfd99cd35dfcba65f73d9092089f720aa02ba7af5eaf",
       "order": 0
     },
     {
@@ -54,99 +55,106 @@
       "slug": "agents",
       "path": "agents.md",
       "title": "Agents",
-      "hash": "eff4b9222eb573f94e6f68808e46984ce9a815a0e121dc0dce0820f933be9114",
+      "hash": "c09958d8a674ca4954cf9ca1c1ca6c20cefc5c97d7c91100456280c86d02955e",
       "order": 4
+    },
+    {
+      "slug": "batch-run",
+      "path": "batch-run.md",
+      "title": "Batch run",
+      "hash": "e986573607a78edfdfe5d8dce96cda946268736fdeb48118f0be63b099c75ace",
+      "order": 5
     },
     {
       "slug": "prompt-placeholders",
       "path": "prompt-placeholders.md",
       "title": "Prompt and placeholders",
       "hash": "066c62e7546a9c30496e969c8e9446375ea4d2499003d607df7af461baa7be85",
-      "order": 5
+      "order": 6
     },
     {
       "slug": "local-files",
       "path": "local-files.md",
       "title": "Local files and folders",
-      "hash": "8b0e42629ef511f2d752f1674cead4f7b92e0e388383eaed1420481a9676f5c6",
-      "order": 6
+      "hash": "e8700ea5a0c94d7b8ed4440ee138ea1da4f2f9ae3ac58898cdf1564cf2b100c1",
+      "order": 7
     },
     {
       "slug": "tools",
       "path": "tools.md",
       "title": "Tools",
       "hash": "a0d5a605ea0f9efe5cf727cc19d6c0462f7bc4ae683e57de415ad6728171bbed",
-      "order": 7
+      "order": 8
     },
     {
       "slug": "gallery",
       "path": "gallery.md",
       "title": "Tool Gallery",
       "hash": "19ef82ebe8c9297fec0ce7f5a154618b4996de0e0a3de857bc9dcc4692271efe",
-      "order": 8
+      "order": 9
     },
     {
       "slug": "llm-accounts",
       "path": "llm-accounts.md",
       "title": "LLM Accounts",
       "hash": "848f44b864797d7cc258d5351927946fa24bb73fb6b23d416142916206097b98",
-      "order": 9
+      "order": 10
     },
     {
       "slug": "ai-assistant",
       "path": "ai-assistant.md",
       "title": "AI Assistant",
       "hash": "a1ce3231faffde9ea84e75372c0f6bd94054085fb5112ca08a88024c2f546fb3",
-      "order": 10
+      "order": 11
     },
     {
       "slug": "settings",
       "path": "settings.md",
       "title": "Settings",
       "hash": "3b6d6e24797b6cd6c8ca69531d53d27e798b25948c7eec486e71655cf4067c47",
-      "order": 11
+      "order": 12
     },
     {
       "slug": "automation",
       "path": "automation/index.md",
       "title": "Automation (CLI & API)",
       "hash": "a6f462c8bf6edccfa5bf23c50f8aee68212ef06bd41bcfd9b9a9e87478122065",
-      "order": 12
+      "order": 13
     },
     {
       "slug": "automation/cli",
       "path": "automation/cli.md",
       "title": "CLI",
       "hash": "41cbe3a89e01914ff267d036fcc05631bc3b2c81a893affb934c0970bb2fc075",
-      "order": 13
+      "order": 14
     },
     {
       "slug": "automation/rest-api",
       "path": "automation/rest-api.md",
       "title": "REST API",
       "hash": "14663629902d92d72c28539577d9959a04e9176d669e7beef2d14632e202a498",
-      "order": 14
+      "order": 15
     },
     {
       "slug": "troubleshooting",
       "path": "troubleshooting.md",
       "title": "Troubleshooting",
-      "hash": "5483c0ee683bd14c93d287949c8981efeccf57bcdbbd9ccce449d152ddd548e0",
-      "order": 15
+      "hash": "d79037e7252691106c4b6ad3ec91e75e92a79dcc741495f1736229a635f0240d",
+      "order": 16
     },
     {
       "slug": "contact",
       "path": "contact.md",
       "title": "Contact",
       "hash": "8c62f239bca5e0af586c335598ea20b77f823e86e5081495e3a8e521b690f7f1",
-      "order": 16
+      "order": 17
     },
     {
       "slug": "README",
       "path": "README.md",
       "title": "Help Docs Workflow",
       "hash": "63c73e52f62984cb475e6c326743f269b6d51a940a64702dce6a107958365dfe",
-      "order": 10014
+      "order": 10015
     }
   ]
 }

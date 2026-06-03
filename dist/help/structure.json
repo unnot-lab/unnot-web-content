@@ -6,6 +6,7 @@
       {"id": "configuration", "title": "Configuration", "path": "/help/getting-started/configuration", "filePath": "getting-started/configuration.md"}
     ]},
     {"id": "agents", "title": "Agents", "path": "/help/agents", "filePath": "agents.md"},
+    {"id": "batch-run", "title": "Batch run", "path": "/help/batch-run", "filePath": "batch-run.md"},
     {"id": "prompt-placeholders", "title": "Prompt and placeholders", "path": "/help/prompt-placeholders", "filePath": "prompt-placeholders.md"},
     {"id": "local-files", "title": "Local files and folders", "path": "/help/local-files", "filePath": "local-files.md"},
     {"id": "tools", "title": "Tools", "path": "/help/tools", "filePath": "tools.md"},

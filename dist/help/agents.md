@@ -6,7 +6,7 @@ An agent is a workflow: **instructions** (prompt) for the LLM, optional **MCP to
 
 The editor has a main area (name, **Instructions** prompt, and optional panels) and a **side panel** with sections. The prompt can contain **placeholders** (inputs, outputs, tools, resources); they are shown as chips in the editor and replaced with values or markers when the agent runs. See [Prompt and placeholders](/help/prompt-placeholders) for format and how to insert them.
 
-The **side panel** includes: **Agent Info** (status, last run), **Triggers**, **Input/Output**, **Tools**, **Subagents**, **Resources**, **LLM** (model choice). Use **Settings** for agent-specific limits and pre/post actions; **Changes** for version history; **Results** for execution history (runs and logs).
+The **side panel** includes: **Agent Info** (status, last run), **Triggers**, **Input/Output**, **Tools**, **Subagents**, **Resources**, **LLM** (model choice), **Batch** (bulk processing). Use **Settings** for agent-specific limits and pre/post actions; **Changes** for version history; **Results** for execution history (runs and logs).
 
 In **Input/Output** you can add **File path** and **Folder path** field types for local paths per run. In **Resources** you attach agent-bound files and folders referenced from the prompt. See [Local files and folders](/help/local-files) for how these differ and when to use MCP file tools.
 
@@ -29,6 +29,7 @@ Triggers define when the agent runs:
 - **Schedule** — at fixed times: hourly, daily, weekly, monthly, or a custom cron expression.
 - **Interval** — every N minutes, hours, or days (with optional start time and mode).
 - **File system** — when files or folders change (e.g. create, update). Unnot fills a system input object **Input File** with event details; use **File path** / **Folder path** fields inside that object (or elsewhere in the schema) so the model can read those paths. See [Local files and folders](/help/local-files#file-system-trigger).
+  - **Group files before run** (file trigger option) — wait for several file events, then run the agent **once** with a list of files in Input File. Not the same as **Batch run** — see [Batch run](/help/batch-run#group-files-vs-batch-run).
 
 Add or edit triggers in the editor → **Triggers** section. You can enable or disable individual triggers.
 
@@ -71,4 +72,4 @@ For programmatic generation and validation of the full native agents JSON format
 
 - [/help/schemas/unnot-agents-full.schema.json](/help/schemas/unnot-agents-full.schema.json)
 
-For a first-time setup, see [Your First Agent](/help/getting-started/first-agent). For placeholder syntax and the prompt editor, see [Prompt and placeholders](/help/prompt-placeholders). For local files, input fields, and resources, see [Local files and folders](/help/local-files). For MCP tools, see [Tools](/help/tools).
+For bulk processing (folder, CSV, lists), see [Batch run](/help/batch-run). For a first-time setup, see [Your First Agent](/help/getting-started/first-agent). For placeholder syntax and the prompt editor, see [Prompt and placeholders](/help/prompt-placeholders). For local files, input fields, and resources, see [Local files and folders](/help/local-files). For MCP tools, see [Tools](/help/tools).

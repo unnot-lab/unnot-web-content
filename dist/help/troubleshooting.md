@@ -43,6 +43,15 @@ If a tool uses **OAuth2 (browser login)** and cannot connect:
 - If sign-in flow is stuck or keeps failing, use **Clear session** and sign in again.
 - Check per-tool **Logs** and app logs for the exact provider/server error.
 
+## Batch run
+
+- **Trigger still runs the agent once per file** — open **Batch** → **Batch settings** and complete **Source** and **For each run** mapping. Until batch is ready, file events use normal single runs. Check the hint under the file trigger in the editor.
+- **Folder source on file trigger processes more than the new file** — with **Folder** source, the batch rescans the folder from **Batch settings**, not only the file that fired the event. Use **CSV** with the triggering file path, or **Value list**, if you need different behavior.
+- **No combined export file** — export on finish needs **Export results** enabled **and** a path (default or **Run batch** override). You can leave the path empty at start and use **Export results…** after the batch finishes.
+- **Batch settings not saved** — click **Apply** in **Batch settings**, then save the agent. Draft batch changes are lost if you close without applying.
+
+See [Batch run](/help/batch-run).
+
 ## Agent fails to run or doesn't start
 
 - **Status "Not configured"** — the agent needs a name, instructions (prompt), and at least one enabled trigger. Open it in the editor and complete those; add or enable a trigger in the **Triggers** section if missing.

@@ -61,6 +61,9 @@ See [Tools](/help/tools) for connecting MCP servers.
 
 A **File system** trigger runs the agent when watched files or folders change (create, update, etc.). Unnot adds a system input object **Input File** with details about the event (paths, action). Put **File path** or **Folder path** fields on properties inside **Input File** so the agent can read those paths the same way as other input fields.
 
+- **Group files before run** — one run with several files in **Input File** (see [Agents](/help/agents#triggers)).
+- **Batch run** — many runs, one item each, configured under **Batch** in the agent editor (see [Batch run](/help/batch-run)).
+
 Like other non–on-demand triggers, the agent must be **Activated** for automatic runs. See [Agents](/help/agents#triggers).
 
 ## Automation (CLI and REST API)
