@@ -46,8 +46,10 @@ If a tool uses **OAuth2 (browser login)** and cannot connect:
 ## Batch run
 
 - **Trigger still runs the agent once per file** — open **Batch** → **Batch settings** and complete **Source** and **For each run** mapping. Until batch is ready, file events use normal single runs. Check the hint under the file trigger in the editor.
-- **Folder source on file trigger processes more than the new file** — with **Folder** source, the batch rescans the folder from **Batch settings**, not only the file that fired the event. Use **CSV** with the triggering file path, or **Value list**, if you need different behavior.
-- **No combined export file** — export on finish needs **Export results** enabled **and** a path (default or **Run batch** override). You can leave the path empty at start and use **Export results…** after the batch finishes.
+- **Expected batch on CSV drop, but one run per file** — batch may be off, **Group files** may be on, or batch is not ready. With batch on and **CSV** source, one file event should start a batch with **one agent run per CSV row**, not one run for the file. See [File trigger and batch](/help/batch-run#file-trigger-and-batch).
+- **Folder source on file trigger processes more than the new file** — with **Folder** source, the batch rescans the folder from **Batch settings**, not only the file that fired the event. Use **CSV** source if each dropped file should be read as a table, or **Value list**, if you need different behavior.
+- **Scheduled batch with CSV does nothing useful** — **Schedule / Interval** uses **Default file (optional)** from Batch settings (or **File for this run** in **Run batch**), not the file-trigger path. Set a default CSV path for scheduled runs.
+- **No combined export file** — turn on **Save a summary file when the batch finishes** and set **Save to** for auto-export, or leave **Save to** empty and use **Export results…** after the batch finishes.
 - **Batch settings not saved** — click **Apply** in **Batch settings**, then save the agent. Draft batch changes are lost if you close without applying.
 
 See [Batch run](/help/batch-run).
