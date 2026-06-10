@@ -1,6 +1,6 @@
 # Batch run
 
-**Batch run** runs the agent **once per item** from a list you define—files in a folder, rows in a CSV, values in a list, or a number range. You get a **queue with progress**, can **pause**, **retry** failed items, and optionally **export** all results to one table (CSV or JSON Lines).
+**Batch run** runs the agent **once per item** from a list you define—files in a folder, rows in a CSV, values in a list, or a number range. You get a **queue with progress**, can **pause**, **retry** failed items, and optionally **export** all results to one table (CSV, Excel, or JSON Lines).
 
 Use it when you need to process **many similar items** the same way, not when you want **one** run that sees several files at once (see [Group files vs batch run](#group-files-vs-batch-run) below).
 
@@ -29,7 +29,7 @@ While a batch is running, open the **Run batch** panel to see items, status, and
 1. **Enable batch run** in **Batch settings**.
 2. **Source** — choose what each item is:
    - **Folder** — files matching include/exclude patterns (and optional recursion).
-   - **CSV** — **one row per item** (header, delimiter, and row range under **Parsing options**).
+   - **Excel / CSV** — **one row per item** (worksheet for Excel, delimiter for CSV, header, and row range under **Parsing options**).
    - **Value list** — lines you enter in settings (or override at launch).
    - **Number range** — integers from start to end with a step.
 3. **For each run** — map each item to the agent’s input fields (e.g. a CSV column → a text field). The UI can auto-fill common mappings when you enable batch or change the source.
@@ -54,11 +54,11 @@ When **Group files** is **off** and **Batch run** is **on**, each matching file 
 | Settings | What one file event does |
 |----------|---------------------------|
 | Batch **off** | **One** normal agent run per file (`Input File` from the trigger) |
-| Batch **on**, source **CSV** | **One batch** on the **file that triggered** the event; items = **rows in that CSV** (one agent run per row, not one run for the whole file) |
+| Batch **on**, source **Excel / CSV** | **One batch** on the **file that triggered** the event; items = **rows in that file** (one agent run per row, not one run for the whole file) |
 | Batch **on**, source **Folder** | **One batch** that rescans the **folder path from Batch settings** (all matching files there—not only the file from the event) |
 | **Group files** **on** | **One** agent run with several files in **Input File**; batch run is **not** used |
 
-**CSV and the trigger:** the watched path on the **file trigger** (e.g. `*.csv` in a folder) decides **when** to start. **Parsing options** and **For each run** mapping in Batch settings decide **how** that CSV is read. **Default file (optional)** in Batch settings is **not** required for file-trigger batches—the triggering file path is used automatically. Use **Default file** for **Run batch** and **Schedule / Interval** runs.
+**Excel / CSV and the trigger:** the watched path on the **file trigger** (e.g. `*.xlsx` or `*.csv` in a folder) decides **when** to start. **Parsing options** and **For each run** mapping in Batch settings decide **how** that file is read. **Default file (optional)** in Batch settings is **not** required for file-trigger batches—the triggering file path is used automatically. Use **Default file** for **Run batch** and **Schedule / Interval** runs.
 
 ## During and after a run
 
@@ -72,7 +72,7 @@ Unnot always keeps batch data in an internal run folder (`results.jsonl` per bat
 
 ## Export results
 
-| | **Combined export** (CSV / JSON Lines) | **Run folder** (automatic) |
+| | **Combined export** (CSV / Excel / JSON Lines) | **Run folder** (automatic) |
 |--|----------------------------------------|----------------------------|
 | **What** | One row per item (status + outputs) for you | Technical storage for the app |
 | **When** | Auto on finish **if** **Save to** is set; or **Export results…** after the batch ends | Every batch run |
@@ -82,7 +82,7 @@ Unnot always keeps batch data in an internal run folder (`results.jsonl` per bat
 - You can **start a batch without** a summary export path; use **Export results…** on the items toolbar after the batch finishes.
 - **Save to (optional)** in Batch settings and **Browse** there use **Save As**—the file is created on export, not chosen from existing files.
 - **Add timestamp to file name** (on by default) — each run writes a new file (e.g. `batch-my-agent-2026-06-03_14-30-45.csv`); turn off to overwrite the same path every run.
-- **Export results…** opens **Save As** again (re-export is allowed); format follows the file extension you pick (`.csv` or `.jsonl`).
+- **Export results…** opens **Save As** again (re-export is allowed); format follows the file extension you pick (`.csv`, `.xlsx`, or `.jsonl`).
 
 ## Subagents
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-07T22:26:25.572Z",
+  "generatedAt": "2026-06-10T22:30:53.638Z",
   "totalPages": 19,
   "navSlugs": [
     "overview",
@@ -62,7 +62,7 @@
       "slug": "batch-run",
       "path": "batch-run.md",
       "title": "Batch run",
-      "hash": "d42426a554c223bd4c3f4527d99fd8d98424de9a03f9c21804ea7a6c251ba8a2",
+      "hash": "437665204eec6c01a5872063481e80704e38f6783a7a9e528d6194e8efd040d2",
       "order": 5
     },
     {
