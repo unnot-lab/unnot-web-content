@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T17:03:41.718Z",
+  "generatedAt": "2026-07-29T18:59:53.585Z",
   "totalPages": 19,
   "navSlugs": [
     "overview",
@@ -83,7 +83,7 @@
       "slug": "tools",
       "path": "tools.md",
       "title": "Tools",
-      "hash": "a0d5a605ea0f9efe5cf727cc19d6c0462f7bc4ae683e57de415ad6728171bbed",
+      "hash": "6dc2af825f4ae54663ba4ad9da21c4f7380595a31059b36e7366e81391c8bd27",
       "order": 8
     },
     {
@@ -104,7 +104,7 @@
       "slug": "ai-assistant",
       "path": "ai-assistant.md",
       "title": "AI Assistant",
-      "hash": "a1ce3231faffde9ea84e75372c0f6bd94054085fb5112ca08a88024c2f546fb3",
+      "hash": "b52e03cb9edfa9b09662261331c4d467e73b87ef07bab76ebe7e50660c2dfa43",
       "order": 11
     },
     {

@@ -16,6 +16,10 @@ From the **Tools** list you can start several tools at once: **Start Available**
 
 You can also discover servers in **Tool Gallery** (browse registries, inspect entry details, and install). See [Tool Gallery](/help/gallery).
 
+## AI Assistant (tool setup)
+
+In the **tool editor** toolbar, open **AI Assistant** to configure or debug the **current** MCP tool by chat (including a new tool that is not saved yet — the first message creates it). Fill missing settings, diagnose connection errors, check whether `uv` / `npx` / Node are on PATH, and retry connect. The same assistant model settings apply as for agents (**Settings → AI Assistant**). See [AI Assistant](/help/ai-assistant).
+
 ## Delete and Trash
 
 Deleting a tool moves it to **Trash** (use **Trash** in the sidebar under **Tools**). Open **Trash** to **Restore** a tool or delete it permanently.
