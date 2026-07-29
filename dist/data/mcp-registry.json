@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-12T12:26:00.429Z",
+  "generatedAt": "2026-07-29T19:28:30.850Z",
   "source": "unnot-mcp-gallery",
   "totalServers": 102,
   "servers": [
@@ -2766,43 +2766,43 @@
     },
     {
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-      "name": "npm/markitdown-mcp-npx",
+      "name": "pypi/markitdown-mcp",
       "title": "MarkItDown",
       "description": "Turn office documents, PDFs, images, and media into Markdown.",
       "version": "0.1.0",
       "repository": {
-        "url": "https://github.com/xkiranj/markitdown-mcp-npx",
+        "url": "https://github.com/microsoft/markitdown",
         "source": "github"
       },
-      "websiteUrl": "https://github.com/xkiranj/markitdown-mcp-npx",
+      "websiteUrl": "https://github.com/microsoft/markitdown/tree/main/packages/markitdown-mcp",
       "_meta": {
         "io.unnot/gallery": {
           "legacyId": "builtin-markitdown",
           "icon": "file-text",
           "iconBg": "#4F46E5",
           "category": "Utilities",
-          "maintained": "community",
+          "maintained": "vendor",
           "toolsSummary": [
             {
-              "name": "convert",
-              "description": "Convert supported inputs (PDF, Office, images, audio, archives, etc.) to Markdown for agents."
+              "name": "convert_to_markdown",
+              "description": "Convert a local file, HTTP(S) URL, or data URI (PDF, Office, images, audio, etc.) to Markdown."
             }
           ],
-          "about": "Wraps Microsoft MarkItDown-style conversion for MCP: one npx entrypoint suitable for turning heterogeneous files into LLM-friendly Markdown."
+          "about": "Official Microsoft MarkItDown MCP server (PyPI): convert heterogeneous files and URLs into LLM-friendly Markdown via uvx."
         },
         "io.unnot/install": {
-          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-markitdown\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"markitdown-mcp-npx\"],\n      \"type\": \"stdio\"\n    }\n  }\n}"
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-markitdown\": {\n      \"command\": \"uvx\",\n      \"args\": [\"markitdown-mcp\"],\n      \"type\": \"stdio\"\n    }\n  }\n}"
         }
       },
       "packages": [
         {
-          "registryType": "npm",
-          "registryBaseUrl": "https://registry.npmjs.org",
-          "identifier": "markitdown-mcp-npx",
+          "registryType": "pypi",
+          "registryBaseUrl": "https://pypi.org",
+          "identifier": "markitdown-mcp",
           "transport": {
             "type": "stdio"
           },
-          "runtimeHint": "npx"
+          "runtimeHint": "uvx"
         }
       ]
     },

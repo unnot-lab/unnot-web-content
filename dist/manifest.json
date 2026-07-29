@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-29T18:59:53.588Z",
+  "generatedAt": "2026-07-29T19:28:30.937Z",
   "sections": {
     "help": {
       "index": "data/help-index.json",
@@ -12,7 +12,7 @@
     },
     "mcpRegistry": {
       "file": "data/mcp-registry.json",
-      "hash": "bf54060047567a3939f969204f6714bedd5b6dad4ef99c5b245e60b948a88356",
+      "hash": "a48f43145d535f6cdf378c4885e7893824a9160ed1865ef1204ac8f0e0ada972",
       "totalServers": 102,
       "source": "unnot-mcp-gallery"
     },
