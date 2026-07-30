@@ -1,11 +1,22 @@
 # AI Assistant
 
-The AI Assistant helps you configure and manage agents **and MCP tools** by chat instead of clicking through every form.
+The AI Assistant helps you configure and manage agents **and MCP tools** by chat instead of clicking through every form. There is also a separate **Chat** entry for one-off requests that do not create or edit an agent.
 
 ## Where to open it
 
+- **Chat** (sidebar) — one-off help: ask a question, attach a file, search/install MCP tools (with your confirmation), and run tool functions. Does **not** edit agents or tool configs in place. To turn a chat into a reusable agent, Chat can offer **Open Agent Assistant**; to set up an MCP tool in the editor, **Open Tool Assistant** (you confirm). Model settings are the same as for the AI Assistant (**Settings → AI Assistant**).
 - **Agent editor** — robot / AI Assistant button in the toolbar. The chat is about the agent you are editing.
 - **Tool editor** — AI Assistant button in the toolbar (also for a new unsaved tool: the first message saves it, then the chat continues). The chat is about the MCP tool you are editing: settings, connection errors, runtime packages (`uv` / `npx`), and filling missing parameters.
+
+## What Chat can do (one-off)
+
+- Answer questions and draft text from what you paste or attach.
+- Read chat attachments (and use session MCP tools when a format needs them, e.g. spreadsheets).
+- Search installed tools, inspect schemas, connect, and run a function.
+- Search the Tool Gallery and offer install via a UI card (you confirm; no silent install).
+- Look up in-app help (`help` tools).
+
+Chat will **not** silently create agents or tools. If you ask to save/automate as an agent or set up a tool in the editor, it can show a card to open **Agent Assistant** or **Tool Assistant**, where you finish the build.
 
 ## What the assistant can do (agents)
 
@@ -33,12 +44,12 @@ The model used by the assistant (and its options) is configured in **Settings �
 
 ## Saving and rollback
 
-When you send your **first message** that might change the agent (and there are unsaved changes), the app **saves the agent automatically** before sending. That creates a checkpoint so you can undo later.
+When you send your **first message** that might change the agent or tool (and there are unsaved changes), the app **saves automatically** before sending. That creates a checkpoint so you can undo later.
 
-- **In the chat** — you can roll back to a previous message. The assistant can restore the agent to the state at that message (or only undo the chat and keep the current agent).
-- **In the Changes panel** — open it from the agent editor side panel (the **Changes** button with history icon). The list shows saved versions; versions saved by the assistant are marked with a **robot icon** (tooltip: "Changed by AI Assistant"). You can load any version from there.
-
-Tool config changes from the assistant are saved to the tool file (with history in the tool **Changes** panel when backups are created).
+- **In Chat** (sidebar) — roll back to a previous user message to undo later replies (chat history only; nothing else in the app is restored).
+- **In the agent editor chat** — roll back the conversation; optionally restore the agent to the state at that message (or undo the chat only).
+- **In the tool editor chat** — same: roll back the conversation; optionally restore the tool config to the state at that message (or undo the chat only).
+- **In the Changes panel** — open it from the agent or tool editor side panel (the **Changes** button with history icon). The list shows saved versions; versions saved by the assistant are marked with a **robot icon** (tooltip: "Changed by AI Assistant"). You can load any version from there.
 
 ## Tips
 
