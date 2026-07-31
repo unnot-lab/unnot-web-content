@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T20:10:52.909Z",
+  "generatedAt": "2026-07-31T20:24:10.225Z",
   "totalPages": 19,
   "navSlugs": [
     "overview",
@@ -104,7 +104,7 @@
       "slug": "ai-assistant",
       "path": "ai-assistant.md",
       "title": "AI Assistant",
-      "hash": "23f3add1f51c561f05b9515788049de5c42065556fefd19fc119863add297aa1",
+      "hash": "0f3c52b307193f691198ea2f388fe54bacc9613ddb715eb6ecfa9d64a4a8ea0e",
       "order": 11
     },
     {
