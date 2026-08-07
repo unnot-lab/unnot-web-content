@@ -11,7 +11,7 @@ The AI Assistant helps you configure and manage agents **and MCP tools** by chat
 ## What Chat can do (one-off)
 
 - Answer questions and draft text from what you paste or attach.
-- Read chat attachments (and use session MCP tools when a format needs them, e.g. spreadsheets).
+- **Chat attachments (paperclip)** — text, HTML, `.docx`, and **PDF** (text layer only; no OCR): the assistant can **search** inside the file and **read a window** around a hit, so large files need not be loaded whole. Spreadsheets and other office binaries still need a session MCP tool (e.g. Excel) via `staged_path`. Search modes (`phrase` / `keywords`) follow the same idea as agent resources; see [Local files and folders](/help/local-files#agent-resources).
 - Search installed tools, inspect schemas, connect, and run a function.
 - Search the Tool Gallery and offer install via a UI card (you confirm; no silent install).
 - Look up existing agents by name/id (read-only) and offer an **Apply** card to patch identity, tools, simple schedule/interval, scheduler activation, prompt, or execution settings.

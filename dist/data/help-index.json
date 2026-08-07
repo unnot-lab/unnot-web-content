@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T21:54:57.684Z",
+  "generatedAt": "2026-08-07T23:14:37.471Z",
   "totalPages": 19,
   "navSlugs": [
     "overview",
@@ -55,7 +55,7 @@
       "slug": "agents",
       "path": "agents.md",
       "title": "Agents",
-      "hash": "c09958d8a674ca4954cf9ca1c1ca6c20cefc5c97d7c91100456280c86d02955e",
+      "hash": "bc06d86c434e339d87437f56c36fe48b933db295a533246a4a1c809c056fb566",
       "order": 4
     },
     {
@@ -76,14 +76,14 @@
       "slug": "local-files",
       "path": "local-files.md",
       "title": "Local files and folders",
-      "hash": "fee8acf922ae59309a38d72bdaa8c7580f3e3b8fee5ab8c01d3fc96f3e1ce433",
+      "hash": "a1eb690122647fae555adc2583d4872b1b3f16b36fa9b81a86aa69c7581b36de",
       "order": 7
     },
     {
       "slug": "tools",
       "path": "tools.md",
       "title": "Tools",
-      "hash": "6dc2af825f4ae54663ba4ad9da21c4f7380595a31059b36e7366e81391c8bd27",
+      "hash": "56ae44ff961cbff9a544673f060c76a6aea86f960b3469fdfdb1e36191657662",
       "order": 8
     },
     {
@@ -104,7 +104,7 @@
       "slug": "ai-assistant",
       "path": "ai-assistant.md",
       "title": "AI Assistant",
-      "hash": "0f3c52b307193f691198ea2f388fe54bacc9613ddb715eb6ecfa9d64a4a8ea0e",
+      "hash": "0dcffde8fe2fd10d8aaea54e673234bc7155fa695826c6bb6279887326ba9080",
       "order": 11
     },
     {

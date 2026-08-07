@@ -12,7 +12,7 @@ Tools in Unnot are **MCP (Model Context Protocol)** servers. Each tool exposes c
 - **Settings** — in the tool editor side panel, open **Settings** (connection icon) to set command/URL, args, env, and other options. Save the tool before connecting.
 - **Connect** — in the editor, use **Save & Start Server** (stdio) or **Save & Connect to Server** (SSE or HTTP Stream). If the config is already saved, use **Start Server** or **Connect to Server**. Once connected, the **Server Info** section shows server name, version, and number of tools/resources/prompts.
 
-From the **Tools** list you can start several tools at once: **Start Available** starts all tools that are **Ready** (configured but not yet connected). **Stop All** stops all connected tools. The **More** menu offers **Start All**, **Restart Connected**, **Export Tools**, **Import Tools**, and **View App Logs**.
+From the **Tools** list you can start several tools at once: **Start Available** starts all tools that are **Ready** (configured but not yet connected). **Stop All** stops all connected tools. The list **+** menu offers **Create new**, **Add from gallery**, and **Import Tools…**. The **More** menu offers **Start All**, **Restart Connected**, **Export Tools**, **Import Tools**, and **View App Logs**. You can also open **Import Tool…** from the sidebar **+** menu.
 
 You can also discover servers in **Tool Gallery** (browse registries, inspect entry details, and install). See [Tool Gallery](/help/gallery).
 
@@ -78,7 +78,7 @@ Use **Clear session** if you need to reset OAuth state and sign in again.
 
 Use **More → Export Tools** to save selected tools to a JSON file (backup or sharing). In the export dialog you can enable **Anonymize sensitive data**: only environment variables that you marked as secret (lock icon next to the variable in **Settings**) are replaced with `[ANONYMIZED]` in the file. Nothing is masked by name alone — you decide which values to hide.
 
-**More → Import Tools** loads tools from a JSON file (e.g. after export or from another machine).
+**Import Tools…** (sidebar **+**, Tools list **+**, or **More → Import Tools**) loads tools from a JSON file or from Claude Desktop / Cursor MCP configs.
 
 ### Advanced: full native tools JSON schema
 

@@ -42,6 +42,13 @@ In the side panel, open **Resources** to attach files or folders to the agent:
 
 In **Instructions**, reference a resource with `{@resource:name}`. At run time it becomes `[resource: name]` for the model. The agent reads those attachments through **Resources**, not through **File path** / **Folder path** input fields.
 
+For large text, **HTML**, **PDF** (text layer only — no OCR), or `.docx` files, the built-in resource / input-path tools support **search** and then **get** a window around a hit line—so the model does not need to load the whole file. **HTML is returned as plain text** (scripts/styles/tags stripped; HTML tables become markdown tables) so help pages do not flood the model with markup. **PDF** is extracted as plain text per page (scanned PDFs without a text layer yield empty extract). On a **folder** resource (or `Folder/subfolder`), **search** can scan many text/HTML/DOCX/PDF files and return hit paths you can **get**. For a large knowledge base, a **folder of HTML/text** is usually easier to navigate than one huge PDF (path hits and subfolders).
+
+Search modes (`match`):
+
+- **`phrase`** (default) — literal substring; spaces stay in the needle; use `|` or `OR` for alternatives.
+- **`keywords`** — whitespace-separated tokens (Unicode, including Cyrillic). On **folders**: spaces = **AND** (every token must appear in the same document); `|` or `OR` = OR of groups; results ranked with **MiniSearch** (BM25, prefix match). On a **single file**: tokens are matched as OR substrings. Prefer keywords for multi-word lookup; if you get 0 hits, drop a token or use `|`.
+
 **When to use resources vs input fields**
 
 - **Resources** — stable files for this agent (templates, knowledge base, a fixed working folder).

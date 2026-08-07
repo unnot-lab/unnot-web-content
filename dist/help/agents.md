@@ -60,7 +60,7 @@ For each post-step you choose when it runs: always, only on success, or only on 
 
 ## Organizing
 
-Use **categories** (locations) to group agents in the sidebar. You can export/import agents for backup or sharing. When exporting, you can enable **Anonymize sensitive data** so that values in env-like fields and in properties with names like token, password, or apiKey are replaced with `[ANONYMIZED]` in the JSON. The **Changes** panel in the editor lists saved versions of the agent (including versions saved by the [AI Assistant](/help/ai-assistant)); you can load any version from there.
+Use **categories** (locations) to group agents in the sidebar. You can export/import agents for backup or sharing: open **Import Agent…** from the sidebar **+** menu, or **Import Agents…** from the Agents list **+** / **More** menu. When exporting, you can enable **Anonymize sensitive data** so that values in env-like fields and in properties with names like token, password, or apiKey are replaced with `[ANONYMIZED]` in the JSON. The **Changes** panel in the editor lists saved versions of the agent (including versions saved by the [AI Assistant](/help/ai-assistant)); you can load any version from there.
 
 ### Sidebar: category order
 
