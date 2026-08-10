@@ -30,6 +30,14 @@ When editing an agent, open the **LLM** section in the side panel. There you cho
 
 If no account is selected or the chosen account has no valid model, the agent may fail at run time or appear misconfigured in the editor. Add or fix accounts in **LLM Accounts**, then reselect in the agent.
 
+## OpenRouter: Recommended free models
+
+When you use an **OpenRouter** account and open the model list, Unnot may show a short **Recommended free models** group at the top. Those are a few free models already in the catalog, ordered by an **unofficial** community ranking (not from OpenRouter and not an official benchmark). The same models still appear under their vendor in the full list.
+
+In the model info tip you may see **Free ranking (not official)** and a **Score** like `765 / 1590` (this model’s score / the current #1 score). Treat that as a light hint for choosing among free models — not a quality guarantee. Free availability and rate limits on OpenRouter can change.
+
+Use the **Free** filter in the model list if you want to browse only free models.
+
 ## Related settings
 
 - **Settings → AI Assistant** — which account and model the in-editor AI Assistant uses. Separate from the model used when you run an agent.

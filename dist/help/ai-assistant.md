@@ -23,7 +23,7 @@ Chat will **not** silently create or edit agents or tools. If you ask to save/au
 
 ## What the assistant can do (agents)
 
-- **Edit the current agent** — the one open in the editor. It can change the prompt (instructions), add or remove tools, edit input and output fields, set triggers, resources, LLM model, execution settings, and activate or deactivate the scheduler. You describe what you want; the assistant applies the changes.
+- **Edit the current agent** — the one open in the editor. It can change the prompt (instructions), add or remove tools, edit input and output fields, set triggers, resources, LLM model, execution settings, and activate or deactivate the scheduler. You describe what you want; the assistant applies the changes. If the agent is still on the **app default** model and that looks like a poor fit, the assistant may **suggest** another model — it should not switch without your OK when you already chose a model.
 - **Run and monitor runs** — run the current agent or **any other agent** by name or id (with optional input parameters). It can wait for completion or run in the background. It has access to **execution history**: list runs, open a specific run’s **result**, **logs** (by phase and level), and **chat** (messages and tool calls). So you can ask “run this”, “show the last run”, “what went wrong in execution X?” and get real data.
 - **Browse agents and tools** — list or search agents and tools, get full details of any agent (read-only). Useful to attach a tool to the current agent, run another agent, or compare settings. It can also see tool status, connection logs, and call a tool function (e.g. for testing).
 
