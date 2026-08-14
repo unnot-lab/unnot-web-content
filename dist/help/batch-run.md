@@ -32,7 +32,7 @@ While a batch is running, open the **Run batch** panel to see items, status, and
    - **Excel / CSV** — **one row per item** (worksheet for Excel, delimiter for CSV, header, and row range under **Parsing options**).
    - **Value list** — lines you enter in settings (or override at launch).
    - **Number range** — integers from start to end with a step.
-3. **For each run** — map each item to the agent’s input fields (e.g. a CSV column → a text field). The UI can auto-fill common mappings when you enable batch or change the source.
+3. **For each run** — map each item to the agent’s input fields (e.g. a CSV column → a text field), or choose **Set once for the whole batch** for a value entered when the batch starts. The UI can auto-fill common mappings when you enable batch or change the source.
 4. **Execution settings** (optional) — **Concurrency** (how many items run in parallel), **When a run fails**, **Retry** settings.
 5. **Export results** (optional) — turn on **Save a summary file when the batch finishes** and optionally set **Save to** for auto-export when the batch completes. You can leave **Save to** empty and use **Export results…** after the run (see [Export results](#export-results)).
 6. **After batch** (optional) — run another agent or steps when the whole batch completes.

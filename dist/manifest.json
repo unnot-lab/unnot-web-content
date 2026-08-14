@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-10T23:46:10.355Z",
+  "generatedAt": "2026-08-14T20:47:20.017Z",
   "sections": {
     "help": {
       "index": "data/help-index.json",
       "root": "help/",
       "totalPages": 19,
-      "hash": "d21a516c4ef7ace566a1b632c46f308d346ffa5a6f90fb4c5ba5dd6f06366520",
+      "hash": "3fe526b29596cb595289260952b8cfe81021bdca3d23874aa66c81c56761aa84",
       "structure": "help/structure.json",
       "structureHash": "99f577791db4879e60ad447c6a53d809a2e38ca4139bfa3d82f1b4cfc49552af"
     },
